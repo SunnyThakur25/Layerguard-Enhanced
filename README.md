@@ -44,7 +44,7 @@ Prerequisites
      
 
 Quick Installation 
-
+```bash
 # Clone the repository
 git clone https://github.com/SunnyThakur25/Layerguard-Enhanced.git
 cd layerguard-enhanced
@@ -64,11 +64,12 @@ chmod +x layerguard_enhanced.py
 chmod +x install_layerguard_enhanced.sh
 ./install_layerguard_enhanced.sh
 source layerguard_enhanced_env/bin/activate
-
+```
 🏃 Quick Start 
+
 # Basic Analysis 
 
-
+```bash
 # Analyze a PyTorch model
 python layerguard_enhanced.py /path/to/your/model.pth
 
@@ -80,18 +81,19 @@ python layerguard_enhanced.py model.pth --sensitivity high
 
 # Generate visualizations
 python layerguard_enhanced.py model.pth --visualize
+```
 # Understanding Output
-
+```
 # Exit codes for automation
 Exit Code 0: Low risk - Model safe
 Exit Code 1: Medium risk - Manual review needed
 Exit Code 2: High risk - Security threat detected
-
+```
 
 
 🔧 Advanced Usage 
 # Layer Filtering 
-
+```bash
 # Analyze only attention layers
 python layerguard_enhanced.py model.pth --layer-filter "attention.*weight"
 
@@ -100,9 +102,9 @@ python layerguard_enhanced.py model.pth --layer-filter "embeddings"
 
 # Focus on suspicious layer names
 python layerguard_enhanced.py model.pth --layer-filter "(backdoor|trigger|malicious)"
-
+```
 # Custom Sensitivity Levels
-
+```bash
 # Low sensitivity (fewer false positives)
 python layerguard_enhanced.py model.pth --sensitivity low
 
@@ -111,9 +113,9 @@ python layerguard_enhanced.py model.pth --sensitivity medium
 
 # High sensitivity (more thorough detection)
 python layerguard_enhanced.py model.pth --sensitivity high
-
+```
 # Comprehensive Analysis with All Features
-
+```
 python layerguard_enhanced.py model.pth \
     --sensitivity high \
     --layer-filter ".*" \
@@ -121,8 +123,10 @@ python layerguard_enhanced.py model.pth \
     --format yaml \
     --visualize \
     --hash-check
+```
 
-    📋 Command Line Options 
+# 📋 Command Line Options 
+```bash
 --sensitivity
 	
 -s
@@ -173,10 +177,10 @@ Batch process multiple models
 	
 None
 
-
+```
 🔄 Batch Processing 
 # Creating Model List 
-
+```bash
 # Create a text file with model paths (one per line)
 echo -e "/models/model1.pth\n/models/hf_bert/\n/models/gpt_model.bin" > model_list.txt
 
@@ -192,16 +196,16 @@ python layerguard_enhanced.py dummy_path \
     --visualize \
     --format markdown
 
-
+```
   # Batch Output Structure
-
+```
 batch_reports/
 ├── report_0_model1.pth.json
 ├── report_1_hf_bert.json
 ├── report_2_gpt_model.bin.json
 ├── batch_summary.json
 └── batch_summary.md
-
+```
 # 📄 Report Formats 
 JSON Format (Default) 
 ```json
@@ -265,7 +269,7 @@ risk_score: 6.8
 | backdoor_trigger.weight | 9.20 | suspicious_layer_name, low_entropy |
 ```
 
-📊 Visualization Features 
+# 📊 Visualization Features 
 Generated Charts 
 
     Layer Statistics Distribution (layer_statistics.png/.pdf) 
@@ -423,6 +427,7 @@ if [ $HIGH_RISK_COUNT -gt 0 ]; then
 fi🎯
 ```
 Use Cases 
+```bash
 1. Third-Party Model Verification
    # Verify vendor-provided models
 python layerguard_enhanced.py vendor_model.pth --sensitivity high --hash-check
@@ -438,7 +443,7 @@ python layerguard_enhanced.py experimental_model.pth --layer-filter "new_layer.*
 4. Compliance and Auditing
    # Generate compliance reports
 python layerguard_enhanced.py model.pth --format markdown --output compliance_report.md
-
+```
 🤝 Contributing 
 
 We welcome contributions to LayerGuard Enhanced! Here's how you can help: 
@@ -469,7 +474,7 @@ Code Contributions
      
 
 Development Setup 
-
+```
 # Install development dependencies
 pip install pytest black flake8 mypy
 
@@ -482,7 +487,7 @@ flake8 layerguard_enhanced.py
 
 # Type checking
 mypy layerguard_enhanced.py
-
+```
 📚 Resources 
 Documentation 
 
@@ -517,7 +522,7 @@ Professional Support
 
 For enterprise support, security consulting, or custom development: 
 
-    Email: support@layerguard.com 
+    Email: sunny48445@gmail.com 
     Commercial licensing available
     Priority response for enterprise customers
      
