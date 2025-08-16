@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+
+# Model files
+*.pth
+
+# Output directories
+layerguard_visualizations/
+batch_reports/
